@@ -1,0 +1,22 @@
+.green {
+  color: green;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.btn-yellow {
+  background-color: yellow;
+}
+
+.light{
+  background-color: white;
+  color: black;
+}
+
+
+.dark{
+  background-color: black;
+  color: white;
+}
