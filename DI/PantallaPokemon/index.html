@@ -4,55 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pantalla Pókemon</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/640px-International_Pok%C3%A9mon_logo.svg.png" alt="Logo de Pokémon" class="logo">
+<body class="bg-light text-center">
+    <header class="bg-primary text-white py-3 d-flex justify-content-between align-items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/640px-International_Pok%C3%A9mon_logo.svg.png" alt="Logo de Pokémon" class="logo" style="height: 50px;">
         <div class="search-bar">
-            <input type="text" placeholder="Buscar Pokémon (nombre, número)">
+            <input type="text" class="form-control rounded-pill" placeholder="Buscar Pokémon (nombre, número)" style="width: 300px;">
         </div>
     </header>
 
-    <main>
-        <section class="pokemon-grid">
-            <div class="pokemon-card">
-                <img src="https://www.bitgab.com/uploads/1597796080-pikachu-1597796080.png" alt="Pikachu">
-                <p>#0025 Pikachu</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur">
-                <p>#0001 Bulbasaur</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png" alt="Charizard">
-                <p>#0006 Charizard</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png" alt="Squirtle">
-                <p>#0007 Squirtle</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/393.png" alt="Piplup">
-                <p>#0393 Piplup</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/448.png" alt="Lucario">
-                <p>#0448 Lucario</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/571.png" alt="Zoroark">
-                <p>#0571 Zoroark</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/812.png" alt="Rillaboom">
-                <p>#0812 Rillaboom</p>
-            </div>
-            <div class="pokemon-card">
-                <img src="https://images.wikidexcdn.net/mwuploads/wikidex/thumb/f/f8/latest/20200428203046/Gengar.png/800px-Gengar.png" alt="Gengar">
-                <p>#0094 Gengar</p>
-            </div>
+    <main class="container my-4">
+        <button id="btn-get-data" class="btn btn-primary mb-4">Get Pokémon Data</button>
+        <section class="row pokemon-grid">
         </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
