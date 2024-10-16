@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TablaComponent } from './components/tabla/tabla.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './modules/material/material.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MaterialModule } from './modules/material/material.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    TablaComponent
+    TablaComponent,
+    NgbModule
   ],
   providers: [
     provideAnimationsAsync()
