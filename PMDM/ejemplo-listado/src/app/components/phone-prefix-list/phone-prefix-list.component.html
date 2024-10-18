@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Prefix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (country of countryPrefixes; track country.nombre) {}
+                    <tr>
+                        <td>
+                            <span [class] =></span>
+                        </td>
+                        <td>
+                            @for (prefixs of country.prefix; track prefix) {
+
+                            } @empty{
+                                <span class="badge badge-danger">No prefix</span>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
