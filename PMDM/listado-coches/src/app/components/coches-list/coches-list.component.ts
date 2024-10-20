@@ -15,10 +15,9 @@ export class CochesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.cochesService.getCochesList().subscribe(respuesta => {
-      this.listadoCoches = respuesta;
+      this.listadoCoches = respuesta.results;
     });
 
   }
 
 }
-  

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Coche } from '../interfaces/coche.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class CochesService {
 
   }
 
-  getCochesList(): Observable<Coche []> {
-    return this.http.get<Coche[]>('https://swapi.dev/api/vehicles');
+  getCochesList(): Observable<any> {
+    return this.http.get<any>('https://swapi.dev/api/vehicles');
   }
 }
