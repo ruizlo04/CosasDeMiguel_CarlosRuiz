@@ -7,11 +7,17 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CochesListComponent } from './components/coches-list/coches-list.component';
 import { provideHttpClient } from '@angular/common/http';
+import { PersonasListComponent } from './components/personas-list/personas-list.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CochesListComponent
+    CochesListComponent,
+    PersonasListComponent,
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

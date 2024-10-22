@@ -2,12 +2,13 @@
     <div class="row">
         @for(item of listadoCoches; track item.url){
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item.name }}</h5>
-                    <p class="card-text">Modelo: {{ item.model }}<br/></p>
-                    <p class="card-text">Clase: {{ item.vehicle_class }}<br/></p>
-                    <p class="card-text">Costo en Créditos: {{ item.cost_in_credits }}<br/></p>
+            <div class="card h-100 shadow-sm">
+                <div class="card-body p-2">
+                    <img [src]="'https://starwars-visualguide.com/assets/img/vehicles/' + item.url.split('/')[item.url.split('/').length - 2] +  '.jpg'" alt="{{ item.name }}" class="card-img-top mb-2 rounded">
+                    <h5 class="card-title text-center">{{ item.name }}</h5>
+                    <p class="card-text"><strong>Modelo:</strong> {{ item.model }}</p>
+                    <p class="card-text"><strong>Clase:</strong> {{ item.vehicle_class }}</p>
+                    <p class="card-text"><strong>Costo en Créditos:</strong> {{ item.cost_in_credits }}</p>
                 </div>
             </div>
         </div>
