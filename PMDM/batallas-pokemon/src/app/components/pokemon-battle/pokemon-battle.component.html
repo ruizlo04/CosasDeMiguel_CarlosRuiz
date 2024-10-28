@@ -1,0 +1,18 @@
+<div class="input-container">
+  <div>
+    <label for="pokemon1-id">Pokemon 1 ID:</label>
+    <input id="pokemon1-id" type="number" [value]="pokemon1Id" (input)="onPokemon1IdChange($event)">
+  </div>
+  <div>
+    <label for="pokemon2-id">Pokemon 2 ID:</label>
+    <input id="pokemon2-id" type="number" [value]="pokemon2Id" (input)="onPokemon2IdChange($event)">
+  </div>
+</div>
+<div class="battle-container">
+  <div class="pokemon-container">
+    <app-pokemon [pokemonDetails]="pokemon1Details" [healthPercentage]="pokemon1HealthPercentage" (attacked)="onAttackFromPokemon1()"></app-pokemon>
+  </div>
+  <div class="pokemon-container">
+    <app-pokemon [pokemonDetails]="pokemon2Details" [healthPercentage]="pokemon2HealthPercentage" (attacked)="onAttackFromPokemon2()"></app-pokemon>
+  </div>
+</div>

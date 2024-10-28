@@ -1,0 +1,22 @@
+.health-bar {
+  width: 100%;
+  background-color: #ddd;
+  border: 1px solid #000; 
+}
+
+.health {
+  height: 20px;
+  transition: width 0.5s; 
+}
+
+.health.green {
+  background-color: #4caf50;
+}
+
+.health.yellow {
+  background-color: #ffeb3b;
+}
+
+.health.red {
+  background-color: #f44336;
+}
