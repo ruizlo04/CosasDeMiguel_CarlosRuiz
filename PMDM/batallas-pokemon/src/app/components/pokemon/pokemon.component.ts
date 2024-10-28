@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Pokemon } from '../../models/pokemon.interface';
+import { PokemonDetailResponse } from '../../models/pokemon-detail.interface';
 
 @Component({
   selector: 'app-pokemon',
@@ -8,7 +8,7 @@ import { Pokemon } from '../../models/pokemon.interface';
 })
 export class PokemonComponent implements OnInit {
   
-  @Input() pokemonDetails: Pokemon | undefined;
+  @Input() pokemonDetails: PokemonDetailResponse | undefined;
   @Input() healthPercentage: number = 100;
   @Output() attacked = new EventEmitter<void>();
 

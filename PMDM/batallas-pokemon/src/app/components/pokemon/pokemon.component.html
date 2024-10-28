@@ -1,7 +1,7 @@
 <div *ngIf="pokemonDetails">
-    <h2>{{ pokemonDetails.name }}</h2>
-    <div class="health-bar">
-      <div [ngClass]="getHealthBarClass()" [style.width.%]="healthPercentage"></div>
-    </div>
-    <button (click)="attack()">Attack</button>
+  <h2>{{ pokemonDetails.name }}</h2>
+  <img [src]="pokemonDetails.sprites.front_default" alt="{{ pokemonDetails.name }} image" />
+  <div class="health-bar">
+    <div [ngClass]="getHealthBarClass()" [style.width.%]="healthPercentage"></div>
   </div>
+</div>
