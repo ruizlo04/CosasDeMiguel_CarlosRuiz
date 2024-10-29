@@ -14,8 +14,8 @@
     <app-pokemon [pokemonDetails]="pokemon1Details" [healthPercentage]="pokemon1HealthPercentage" (attacked)="onAttackFromPokemon1()"></app-pokemon>
   </div>
   <div class="attack-container">
-    <button class="attack-button" (click)="onAttackFromPokemon1()" [disabled]="pokemon1HealthPercentage <= 0 || pokemon2HealthPercentage <= 0">Attack</button>
-    <button class="attack-button" (click)="onAttackFromPokemon2()" [disabled]="pokemon1HealthPercentage <= 0 || pokemon2HealthPercentage <= 0">Attack</button>
+    <button class="attack-button" (click)="onAttackFromPokemon1()" [disabled]="pokemon1HealthPercentage <= 0 || pokemon2HealthPercentage <= 0">Attack 1</button>
+    <button class="attack-button" (click)="onAttackFromPokemon2()" [disabled]="pokemon1HealthPercentage <= 0 || pokemon2HealthPercentage <= 0">Attack 2</button>
   </div>
   <div class="pokemon-container">
     <app-pokemon [pokemonDetails]="pokemon2Details" [healthPercentage]="pokemon2HealthPercentage" (attacked)="onAttackFromPokemon2()"></app-pokemon>

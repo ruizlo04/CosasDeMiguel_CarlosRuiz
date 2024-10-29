@@ -1,0 +1,25 @@
+<div class="container fluid">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <app-pokemon
+        [pokemonId]="pokemonPlayer1Id"
+        [life]="lifePokemon1"
+        [isMyTurn]="pokemonTurn === 1 && !winner"
+        (onAttackDone)="applyDamage($event)"
+      ></app-pokemon>
+    </div>
+    <div class="col-md-4 col-12">
+      <app-pokemon
+        [pokemonId]="pokemonPlayer2Id"
+        [life]="lifePokemon2"
+        [isMyTurn]="pokemonTurn === 2 && !winner"
+        (onAttackDone)="applyDamage($event)"
+      ></app-pokemon>
+    </div>
+  </div>
+
+  <div *ngIf="winner" class="alert alert-success text-center">
+    <h3>{{ winner }} ha ganado!</h3>
+    <button (click)="resetGame()" class="btn btn-primary">Reiniciar Juego</button>
+  </div>
+</div>
