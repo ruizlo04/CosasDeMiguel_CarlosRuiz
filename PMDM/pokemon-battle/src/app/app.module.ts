@@ -9,9 +9,10 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { provideHttpClient } from '@angular/common/http';
 import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CustomImgPipe } from './pipes/custom-img.pipe';
 
 @NgModule({
-  declarations: [AppComponent, BattleComponent, PokemonComponent],
+  declarations: [AppComponent, BattleComponent, PokemonComponent, CustomImgPipe],
   imports: [BrowserModule, AppRoutingModule, NgbModule, LottieComponent],
   providers: [
     provideHttpClient(),

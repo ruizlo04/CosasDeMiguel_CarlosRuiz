@@ -13,7 +13,7 @@ import { AnimationOptions } from 'ngx-lottie';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
-  styleUrl: './pokemon.component.css',
+  styleUrls: ['./pokemon.component.css'],
 })
 export class PokemonComponent implements OnInit {
   options: AnimationOptions = {
