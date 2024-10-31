@@ -1,0 +1,190 @@
+<div class="container-fluid" style="width: 400px">
+    <div class="container mt-4">
+        <h1>Añadir Alumno</h1>
+        <form
+            action=""
+            method="post"
+            (ngSubmit)="addStudent()"
+            #studentForm="ngForm"
+        >
+            <div class="mb-3 row">
+                <label for="name" class="col-sm-2 col-form-label">Nombre:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="name" 
+                        name="name"
+                        placeholder="Nombre" 
+                        required
+                        [(ngModel)]="student.name"
+                    />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="name" class="col-sm-2 col-form-label">Apellido:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="apellido" 
+                        name="apellido"
+                        placeholder="Apellido" 
+                        required
+                        [(ngModel)]="student.apellido"
+                    />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="age" class="col-sm-2 col-form-label">Edad:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="number" 
+                        class="form-control" 
+                        id="age" 
+                        name="age" 
+                        placeholder="age" 
+                        required
+                        [(ngModel)]="student.age"
+                    />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="email"
+                        class="form-control" 
+                        id="email" 
+                        name="email" 
+                        placeholder="email" 
+                        [(ngModel)]="student.email"
+                    />
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <label for="course" class="form-label">Curso *</label>
+      
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  name="course"
+                  id="course"
+                  required
+                  [(ngModel)]="student.curso"
+                >
+                  <option value="" selected="selected">-Select one-</option>
+                  @for(course of courseList; track course){
+                  <option [value]="course">{{ course }}</option>
+                  }
+                </select>
+            </div>
+            <div class="col-12 mb-3">
+                <label for="sexo" class="form-label">Sexo *</label>
+      
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  name="sexo"
+                  id="sexo"
+                  required
+                  [(ngModel)]="student.sexo"
+                >
+                  <option value="" selected="selected">-Select one-</option>
+                  @for(sexo of sexoList; track sexo){
+                  <option [value]="sexo">{{ sexo }}</option>
+                  }
+                </select>
+            </div>
+            <div class="mb-3 row">
+                <label for="nif" class="col-sm-2 col-form-label">DNI:</label>
+                <div class="col-sm-8">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="nif" 
+                        name="nif" 
+                        placeholder="DNI" 
+                        [(ngModel)]="student.nif" 
+                        (input)="onNifChange()"
+                    />
+                </div>
+                <div class="col-sm-2">
+                    <span class="form-control-plaintext">{{ nifLetter }}</span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="number" class="col-sm-2 col-form-label">Número:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="number" 
+                        class="form-control" 
+                        id="number" 
+                        name="number"
+                        placeholder="Número"
+                        required
+                        [(ngModel)]="student.numero"
+                    />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="comoConocioPagina" class="col-sm-2 col-form-label">¿Cómo conoció la página?</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="comoConocioPagina" 
+                        name="comoConocioPagina" 
+                        placeholder="¿Cómo conoció la página?" 
+                        required
+                        [(ngModel)]="student.comoConocioPagina"
+                    />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="contrasenya" class="col-sm-2 col-form-label">Contraseña:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="contrasenya" 
+                        name="contrasenya" 
+                        placeholder="Contraseña" 
+                        required
+                        [(ngModel)]="student.contrasenya"
+                        (input)="checkPasswords()"
+                    />
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="repeatPassword" class="col-sm-2 col-form-label">Repetir Contraseña:</label>
+                <div class="col-sm-10">
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="repeatPassword" 
+                        name="repeatPassword" 
+                        placeholder="Repetir Contraseña" 
+                        required
+                        [(ngModel)]="repeatPassword"
+                        (input)="checkPasswords()"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button class="btn btn-primary"
+                    [disabled]="!studentForm.form.valid"
+                    >Add Alumno</button>
+                </div>
+            </div>
+        </form>
+        <div class="row" [hidden]="!submitted">
+            <div class="col-12">
+              <div class="alert alert-success d-flex align-items-center" role="alert">
+                <div>Formulario enviado</div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
